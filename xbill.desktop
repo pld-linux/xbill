@@ -5,6 +5,6 @@ Comment[pl]=Uchroń świat
 Exec=xbill
 Icon=xbill.png
 Type=Application
-Terminal=0
+Terminal=false
 Encoding=UTF-8
 # vi: encoding=utf-8
