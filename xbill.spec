@@ -52,14 +52,12 @@ install -d $RPM_BUILD_ROOT{%{_applnkdir}/Games,%{_pixmapsdir}}
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Games
 install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 
-gzip -9nf README README.Ports ChangeLog
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc README README.Ports ChangeLog
 %attr(2755,root,games) %{_bindir}/xbill
 %attr(775,root,games) %dir /var/games/xbill
 %attr(664,root,games) %config(noreplace) %verify(not size mtime md5) /var/games/xbill/scores
