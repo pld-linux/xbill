@@ -6,6 +6,7 @@ Release:	17
 License:	MIT
 Group:		X11/Applications/Games
 Source0:	ftp://ftp.x.org/contrib/games/%{name}-%{version}.tgz
+# Source0-md5:	132e4b340618924b6a41ec5ec106ca32
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 Patch0:		%{name}-c++.patch
