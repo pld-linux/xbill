@@ -1,4 +1,5 @@
 Summary:	Stop Bill from loading his OS into all the computers
+Summary(pl):	Powstrzymaj Billa przed instalowaniem jego systemu na wszystkich komputerach
 Name:		xbill
 Version:	2.0
 Release:	15
@@ -33,8 +34,7 @@ option as the Linux Age progresses, and it is very popular at Red Hat.
 %build
 xmkmf
 %{__make} \
-	CXXDEBUGFLAGS="%{?debug:-g -O0}%{!?debug:$RPM_OPT_FLAGS} \
-	-fno-rtti -fno-exceptions -fno-implicit-templates"
+	CXXDEBUGFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions -fno-implicit-templates"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -47,7 +47,7 @@ install -d $RPM_BUILD_ROOT{%{_applnkdir}/Games,%{_pixmapsdir}}
   for i in bitmaps pixmaps
   do
 	mv -f ./var/lib/games/xbill/$i .%{_libdir}/xbill/$i
-	ln -s ../../../..%{_libdir}/xbill/$i ./var/lib/games/xbill/$i
+	ln -sf ../../../..%{_libdir}/xbill/$i ./var/lib/games/xbill/$i
   done
 )
 
