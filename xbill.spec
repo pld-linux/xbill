@@ -1,7 +1,7 @@
 Summary:	Stop Bill from loading his OS into all the computers
 Name:		xbill
 Version:	2.0
-Release:	14
+Release:	15
 License:	MIT
 Group:		X11/Applications/Games
 Group(de):	X11/Applikationen/Spiele
