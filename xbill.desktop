@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=xbill
+Comment=Save the world
+Exec=xbill
+Icon=xbill.png
+Type=Application
+Terminal=0
