@@ -1,0 +1,13 @@
+diff -Nur xbill-2.0.orig/Imakefile xbill-2.0/Imakefile
+--- xbill-2.0.orig/Imakefile	Thu Jan 23 17:38:35 1997
++++ xbill-2.0/Imakefile	Fri Jan  5 20:09:27 2001
+@@ -136,6 +136,6 @@
+ 
+ ComplexProgramTarget($(TARGET))
+ 
+-InstallProgramWithFlags(scores, $(XBILL_DIR), -m 777)
+-InstallMultiple ($(XPMS), $(XBILL_DIR)pixmaps)
+-InstallMultiple ($(XBMS), $(XBILL_DIR)bitmaps)
++InstallMultipleFlags(scores,$(XBILL_DIR), -m 777)
++InstallMultiple ($(XPMS),$(XBILL_DIR)pixmaps)
++InstallMultiple ($(XBMS),$(XBILL_DIR)bitmaps)
