@@ -2,7 +2,7 @@ Summary:	Stop Bill from loading his OS into all the computers
 Summary(pl):	Powstrzymaj Billa przed instalowaniem jego systemu na wszystkich komputerach
 Name:		xbill
 Version:	2.0
-Release:	19
+Release:	20
 License:	MIT
 Group:		X11/Applications/Games
 Source0:	ftp://ftp.x.org/contrib/games/%{name}-%{version}.tgz
@@ -42,13 +42,17 @@ popularny w Red Hacie.
 %build
 xmkmf
 %{__make} \
-	CXXDEBUGFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions -fno-implicit-templates"
+	CXX="%{__cxx}" \
+	CXXDEBUGFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions -fno-implicit-templates" \
+	XBILL_DIR=%{_datadir}/xbill/
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
 
-%{__make} DESTDIR=$RPM_BUILD_ROOT install install.man
+%{__make} install install.man \
+	DESTDIR=$RPM_BUILD_ROOT \
+	XBILL_DIR=%{_datadir}/xbill/
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
@@ -63,6 +67,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(775,root,games) %dir /var/games/xbill
 %attr(664,root,games) %config(noreplace) %verify(not size mtime md5) /var/games/xbill/scores
 %{_mandir}/man1/*
-%{_libdir}/xbill
+%{_datadir}/xbill
 %{_desktopdir}/xbill.desktop
 %{_pixmapsdir}/*
