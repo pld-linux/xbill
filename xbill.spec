@@ -29,7 +29,7 @@ make
 %install
 rm -rf $RPM_BUILD_ROOT
 
-make DESTDIR=$RPM_BUILD_ROOT install install.man
+%{__make} DESTDIR=$RPM_BUILD_ROOT install install.man
 
 ( cd $RPM_BUILD_ROOT
   install -d .%{_libdir}/xbill
