@@ -45,11 +45,11 @@ xmkmf
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_applnkdir}/Games,%{_pixmapsdir}}
+install -d $RPM_BUILD_ROOT{%{_applnkdir}/Games/Arcade,%{_pixmapsdir}}
 
 %{__make} DESTDIR=$RPM_BUILD_ROOT install install.man
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Games
+install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Games/Arcade
 install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %clean
@@ -63,5 +63,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(664,root,games) %config(noreplace) %verify(not size mtime md5) /var/games/xbill/scores
 %{_mandir}/man1/*
 %{_libdir}/xbill
-%{_applnkdir}/Games/xbill.desktop
+%{_applnkdir}/Games/Arcade/xbill.desktop
 %{_pixmapsdir}/*
