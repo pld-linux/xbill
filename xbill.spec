@@ -24,7 +24,7 @@ option as the Linux Age progresses, and it is very popular at Red Hat.
 
 %build
 xmkmf
-make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
