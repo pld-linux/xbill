@@ -2,11 +2,24 @@ Summary:	Stop Bill from loading his OS into all the computers
 Summary(pl):	Powstrzymaj Billa przed instalowaniem jego systemu na wszystkich komputerach
 Name:		xbill
 Version:	2.0
-Release:	16
+Release:	17
 License:	MIT
 Group:		X11/Applications/Games
+Group(cs):	X11/Aplikace/Hry
+Group(da):	X11/Programmer/Spil
 Group(de):	X11/Applikationen/Spiele
+Group(es):	X11/Aplicaciones/Juegos
+Group(fr):	X11/Applications/Jeux
+Group(is):	X11/Forrit/Leikir
+Group(it):	X11/Applicazioni/Giochi
+Group(ja):	X11/•¢•◊•Í•±°º•∑•Á•Û/•≤°º•‡
+Group(no):	X11/Applikasjoner/Spill
 Group(pl):	X11/Aplikacje/Gry
+Group(pt):	X11/AplicaÁıes/Jogos
+Group(ru):	X11/“…Ãœ÷≈Œ…—/È«“Ÿ
+Group(sl):	X11/Programi/Igre
+Group(sv):	X11/Till‰mpningar/Spel
+Group(uk):	X11/“…ÀÃ¡ƒŒ¶ “œ«“¡Õ…/∂«“…
 Source0:	ftp://ftp.x.org/contrib/games/%{name}-%{version}.tgz
 Source1:	%{name}.desktop
 Source2:	%{name}.png
@@ -63,8 +76,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc *.gz
 %attr(2755,root,games) %{_bindir}/xbill
-%attr(775,root,games)  %dir /var/games/xbill
-%attr(664,root,games)  %config /var/games/xbill/scores
+%attr(775,root,games) %dir /var/games/xbill
+%attr(664,root,games) %config(noreplace) %verify(not size mtime md5) /var/games/xbill/scores
 %{_mandir}/man1/*
 %{_libdir}/xbill
 %{_applnkdir}/Games/xbill.desktop
