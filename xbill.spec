@@ -4,7 +4,7 @@ Version:	2.0
 Release:	14
 License:	MIT
 Group:		X11/Applications/Games
-Group(de):	X11/Aplikacje/Spiele
+Group(de):	X11/Applikationen/Spiele
 Group(pl):	X11/Aplikacje/Gry
 Source0:	ftp://ftp.x.org/contrib/games/%{name}-%{version}.tgz
 Source1:	%{name}.desktop
