@@ -1,0 +1,12 @@
+--- xbill-2.0/Imakefile.rh	Fri Aug  7 09:44:19 1998
++++ xbill-2.0/Imakefile	Fri Aug  7 09:47:15 1998
+@@ -136,6 +136,6 @@
+ 
+ ComplexProgramTarget($(TARGET))
+ 
+-InstallProgramWithFlags(scores, $(XBILL_DIR), -m 777)
+-InstallMultiple ($(XPMS), $(XBILL_DIR)pixmaps)
+-InstallMultiple ($(XBMS), $(XBILL_DIR)bitmaps)
++InstallProgramWithFlags(scores,$(XBILL_DIR), -m 777)
++InstallMultiple ($(XPMS),$(XBILL_DIR)pixmaps)
++InstallMultiple ($(XBMS),$(XBILL_DIR)bitmaps)
