@@ -2,7 +2,7 @@ Summary:	Stop Bill from loading his OS into all the computers
 Summary(pl):	Powstrzymaj Billa przed instalowaniem jego systemu na wszystkich komputerach
 Name:		xbill
 Version:	2.0
-Release:	18
+Release:	19
 License:	MIT
 Group:		X11/Applications/Games
 Source0:	ftp://ftp.x.org/contrib/games/%{name}-%{version}.tgz
@@ -46,11 +46,11 @@ xmkmf
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_applnkdir}/Games/Arcade,%{_pixmapsdir}}
+install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
 
 %{__make} DESTDIR=$RPM_BUILD_ROOT install install.man
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Games/Arcade
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %clean
@@ -64,5 +64,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(664,root,games) %config(noreplace) %verify(not size mtime md5) /var/games/xbill/scores
 %{_mandir}/man1/*
 %{_libdir}/xbill
-%{_applnkdir}/Games/Arcade/xbill.desktop
+%{_desktopdir}/xbill.desktop
 %{_pixmapsdir}/*
