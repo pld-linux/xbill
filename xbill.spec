@@ -4,7 +4,7 @@ Version:	2.0
 Release:	8
 Copyright:	MIT
 Group:		X11/Applications/Games
-Group(de):	X11/Applikationen/Spiele
+Group(de):	X11/Aplikacje/Spiele
 Group(pl):	X11/Aplikacje/Gry
 Source0:	ftp://ftp.x.org/contrib/games/%{name}-%{version}.tgz
 Patch0:		%{name}-c++.patch
@@ -61,7 +61,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(2755,root,games) %{_prefix}/bin/xbill
+%attr(2755,root,games) %{_bindir}/xbill
 %attr(775,root,games)	%dir /var/lib/games/xbill
 %attr(664,root,games)	%config /var/lib/games/xbill/scores
 /var/lib/games/xbill/bitmaps
