@@ -1,7 +1,9 @@
 [Desktop Entry]
-Name=xbill
+Name=Xbill
 Comment=Save the world
+Comment[pl]=Uchroń świat
 Exec=xbill
 Icon=xbill.png
 Type=Application
 Terminal=0
+# vi: encoding=utf-8
