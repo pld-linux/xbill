@@ -1,0 +1,12 @@
+diff -Nur xbill-2.0.orig/Cable.h xbill-2.0/Cable.h
+--- xbill-2.0.orig/Cable.h	Thu Jan 23 17:22:49 1997
++++ xbill-2.0/Cable.h	Fri Jan  5 20:02:21 2001
+@@ -13,7 +13,7 @@
+ 	void setup();
+ 	void draw();
+ 	void update();
+-	onspark (int locx, int locy);
++	int onspark (int locx, int locy);
+ 
+ };
+ 
