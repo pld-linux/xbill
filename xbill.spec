@@ -2,7 +2,7 @@ Summary:	Stop Bill from loading his OS into all the computers
 Summary(pl):	Powstrzymaj Billa przed instalowaniem jego systemu na wszystkich komputerach
 Name:		xbill
 Version:	2.0
-Release:	15
+Release:	16
 License:	MIT
 Group:		X11/Applications/Games
 Group(de):	X11/Applikationen/Spiele
@@ -12,6 +12,7 @@ Source1:	%{name}.desktop
 Source2:	%{name}.png
 Patch0:		%{name}-c++.patch
 Patch1:		%{name}-imake.patch
+Patch2:		%{name}-FHS.patch
 Icon:		xbill.xpm
 BuildRequires:	XFree86-devel
 BuildRequires:	libstdc++-devel
@@ -26,10 +27,18 @@ forms of Bill, establish new operating systems and boldly go where no
 geek has gone before. Xbill has become an increasingly attractive
 option as the Linux Age progresses, and it is very popular at Red Hat.
 
+%description -l pl
+Gra xbill sprawdza refleks przy wy³apywaniu i niszczeniu wszelkich
+form Billa, instalowaniu nowych systemów operacyjnych oraz docieraniu
+tam, gdzie nikt wcze¶niej nie dotar³. Xbill stawa³ siê ci±gle coraz
+bardziej przyci±gaj±cy w miarê postêpu Ery Linuksa, jest tak¿e bardzo
+popularny w Red Hacie.
+
 %prep
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 xmkmf
@@ -41,15 +50,6 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_applnkdir}/Games,%{_pixmapsdir}}
 
 %{__make} DESTDIR=$RPM_BUILD_ROOT install install.man
-
-( cd $RPM_BUILD_ROOT
-  install -d .%{_libdir}/xbill
-  for i in bitmaps pixmaps
-  do
-	mv -f ./var/lib/games/xbill/$i .%{_libdir}/xbill/$i
-	ln -sf ../../../..%{_libdir}/xbill/$i ./var/lib/games/xbill/$i
-  done
-)
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Games
 install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
@@ -63,10 +63,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc *.gz
 %attr(2755,root,games) %{_bindir}/xbill
-%attr(775,root,games)  %dir /var/lib/games/xbill
-%attr(664,root,games)  %config /var/lib/games/xbill/scores
-/var/lib/games/xbill/bitmaps
-/var/lib/games/xbill/pixmaps
+%attr(775,root,games)  %dir /var/games/xbill
+%attr(664,root,games)  %config /var/games/xbill/scores
 %{_mandir}/man1/*
 %{_libdir}/xbill
 %{_applnkdir}/Games/xbill.desktop

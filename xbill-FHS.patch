@@ -1,0 +1,39 @@
+diff -Nur xbill-2.0.orig/Imakefile xbill-2.0/Imakefile
+--- xbill-2.0.orig/Imakefile	Wed Oct 31 21:20:20 2001
++++ xbill-2.0/Imakefile	Wed Oct 31 21:25:57 2001
+@@ -1,4 +1,5 @@
+-XBILL_DIR = /var/lib/games/xbill/
++XBILL_DIR = /usr/X11R6/lib/xbill/
++XBILL_VAR_DIR = /var/games/xbill/
+ XCOMM XBILL_DIR = $(HOME)/.xbill/
+ 
+ XCOMM Which widget set?  Motif looks slightly better; Athena is free.
+@@ -15,7 +16,7 @@
+ 
+ XCOMM You shouldn't have to change anything below this line.
+ 
+-XBILL_DEF = -DXBILL_HOME=\"$(XBILL_DIR)\"
++XBILL_DEF = -DXBILL_HOME=\"$(XBILL_DIR)\" -DXBILL_VAR=\"$(XBILL_VAR_DIR)\"
+ 
+ INCLUDES = -I. $(XPMINC)
+ CXXDEFINES = $(XBILL_DEF) $(DEFS) $(INCS)
+@@ -136,6 +137,6 @@
+ 
+ ComplexProgramTarget($(TARGET))
+ 
+-InstallMultipleFlags(scores,$(XBILL_DIR), -m 777)
++InstallMultipleFlags(scores,$(XBILL_VAR_DIR), -m 777)
+ InstallMultiple ($(XPMS),$(XBILL_DIR)pixmaps)
+ InstallMultiple ($(XBMS),$(XBILL_DIR)bitmaps)
+diff -Nur xbill-2.0.orig/Scorelist.cc xbill-2.0/Scorelist.cc
+--- xbill-2.0.orig/Scorelist.cc	Thu Jan 23 17:22:50 1997
++++ xbill-2.0/Scorelist.cc	Wed Oct 31 21:26:12 2001
+@@ -2,7 +2,7 @@
+ 
+ FILE *Scorelist::open_file(char *mode) {
+ 	char file[255];
+-	sprintf (file, "%sscores", XBILL_HOME);
++	sprintf (file, "%sscores", XBILL_VAR);
+ 	return fopen (file, mode);
+ }
+ 
