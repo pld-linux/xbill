@@ -33,7 +33,7 @@ option as the Linux Age progresses, and it is very popular at Red Hat.
 %build
 xmkmf
 %{__make} \
-	CXXDEBUGFLAGS="%{?debug:-g -O}%{!?debug:$RPM_OPT_FLAGS} \
+	CXXDEBUGFLAGS="%{?debug:-g -O0}%{!?debug:$RPM_OPT_FLAGS} \
 	-fno-rtti -fno-exceptions -fno-implicit-templates"
 
 %install
