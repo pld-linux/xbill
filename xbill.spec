@@ -2,7 +2,7 @@ Summary:	Stop Bill from loading his OS into all the computers
 Summary(pl):	Powstrzymaj Billa przed instalowaniem jego systemu na wszystkich komputerach
 Name:		xbill
 Version:	2.0
-Release:	17
+Release:	18
 License:	MIT
 Group:		X11/Applications/Games
 Source0:	ftp://ftp.x.org/contrib/games/%{name}-%{version}.tgz
