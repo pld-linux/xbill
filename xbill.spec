@@ -6,7 +6,7 @@ Copyright:	MIT
 Group:		Amusements/Games
 Source:		ftp://ftp.x.org/contrib/games/%{name}-%{version}.tgz
 Patch:		xbill-2.0-rh.patch
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 The xbill game tests your reflexes as you seek out and destroy all forms
