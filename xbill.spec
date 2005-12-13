@@ -65,7 +65,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc README README.Ports ChangeLog
 %attr(2755,root,games) %{_bindir}/xbill
 %attr(775,root,games) %dir /var/games/xbill
-%attr(664,root,games) %config(noreplace) %verify(not size mtime md5) /var/games/xbill/scores
+%attr(664,root,games) %config(noreplace) %verify(not md5 mtime size) /var/games/xbill/scores
 %{_mandir}/man1/*
 %{_datadir}/xbill
 %{_desktopdir}/xbill.desktop
