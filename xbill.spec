@@ -12,7 +12,6 @@ Source2:	%{name}.png
 Patch0:		%{name}-c++.patch
 Patch1:		%{name}-imake.patch
 Patch2:		%{name}-FHS.patch
-Icon:		xbill.xpm
 BuildRequires:	XFree86-devel
 BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
