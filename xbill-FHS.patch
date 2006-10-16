@@ -3,7 +3,7 @@ diff -Nur xbill-2.0.orig/Imakefile xbill-2.0/Imakefile
 +++ xbill-2.0/Imakefile	Wed Oct 31 21:25:57 2001
 @@ -1,4 +1,5 @@
 -XBILL_DIR = /var/lib/games/xbill/
-+XBILL_DIR = /usr/X11R6/lib/xbill/
++XBILL_DIR = /usr/share/xbill/
 +XBILL_VAR_DIR = /var/games/xbill/
  XCOMM XBILL_DIR = $(HOME)/.xbill/
  
