@@ -2,7 +2,7 @@ Summary:	Stop Bill from loading his OS into all the computers
 Summary(pl):	Powstrzymaj Billa przed instalowaniem jego systemu na wszystkich komputerach
 Name:		xbill
 Version:	2.0
-Release:	20
+Release:	21
 License:	MIT
 Group:		X11/Applications/Games
 Source0:	ftp://ftp.x.org/contrib/games/%{name}-%{version}.tgz
@@ -12,12 +12,12 @@ Source2:	%{name}.png
 Patch0:		%{name}-c++.patch
 Patch1:		%{name}-imake.patch
 Patch2:		%{name}-FHS.patch
-BuildRequires:	XFree86-devel
 BuildRequires:	libstdc++-devel
+BuildRequires:	xorg-cf-files
+BuildRequires:	xorg-lib-libXaw-devel
+BuildRequires:	xorg-lib-libXpm-devel
+BuildRequires:	xorg-util-imake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 
 %description
 The xbill game tests your reflexes as you seek out and destroy all
@@ -51,6 +51,8 @@ install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
 
 %{__make} install install.man \
 	DESTDIR=$RPM_BUILD_ROOT \
+	BINDIR=%{_bindir} \
+	MANPATH=%{_mandir} \
 	XBILL_DIR=%{_datadir}/xbill/
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
@@ -65,7 +67,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(2755,root,games) %{_bindir}/xbill
 %attr(775,root,games) %dir /var/games/xbill
 %attr(664,root,games) %config(noreplace) %verify(not md5 mtime size) /var/games/xbill/scores
-%{_mandir}/man1/*
+%{_mandir}/man1/xbill.1*
 %{_datadir}/xbill
 %{_desktopdir}/xbill.desktop
 %{_pixmapsdir}/*
