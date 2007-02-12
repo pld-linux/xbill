@@ -1,5 +1,5 @@
 Summary:	Stop Bill from loading his OS into all the computers
-Summary(pl):	Powstrzymaj Billa przed instalowaniem jego systemu na wszystkich komputerach
+Summary(pl.UTF-8):   Powstrzymaj Billa przed instalowaniem jego systemu na wszystkich komputerach
 Name:		xbill
 Version:	2.0
 Release:	21
@@ -25,11 +25,11 @@ forms of Bill, establish new operating systems and boldly go where no
 geek has gone before. Xbill has become an increasingly attractive
 option as the Linux Age progresses, and it is very popular at Red Hat.
 
-%description -l pl
-Gra xbill sprawdza refleks przy wy³apywaniu i niszczeniu wszelkich
-form Billa, instalowaniu nowych systemów operacyjnych oraz docieraniu
-tam, gdzie nikt wcze¶niej nie dotar³. Xbill stawa³ siê ci±gle coraz
-bardziej przyci±gaj±cy w miarê postêpu Ery Linuksa, jest tak¿e bardzo
+%description -l pl.UTF-8
+Gra xbill sprawdza refleks przy wyÅ‚apywaniu i niszczeniu wszelkich
+form Billa, instalowaniu nowych systemÃ³w operacyjnych oraz docieraniu
+tam, gdzie nikt wczeÅ›niej nie dotarÅ‚. Xbill stawaÅ‚ siÄ™ ciÄ…gle coraz
+bardziej przyciÄ…gajÄ…cy w miarÄ™ postÄ™pu Ery Linuksa, jest takÅ¼e bardzo
 popularny w Red Hacie.
 
 %prep
