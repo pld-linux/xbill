@@ -1,5 +1,5 @@
 Summary:	Stop Bill from loading his OS into all the computers
-Summary(pl.UTF-8):   Powstrzymaj Billa przed instalowaniem jego systemu na wszystkich komputerach
+Summary(pl.UTF-8):	Powstrzymaj Billa przed instalowaniem jego systemu na wszystkich komputerach
 Name:		xbill
 Version:	2.0
 Release:	21
